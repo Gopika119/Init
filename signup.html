@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('C:/Users/aruka/OneDrive/Pictures/Saved Pictures/initbg.jpeg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .bgimage{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            transform: scale(1.1);
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #22682b;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #207a5b;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e5435;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <form id="signupForm">
+        <h2>Signup</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="semester">Semester:</label>
+        <select id="semester" name="semester">
+            <option>S1</option>
+            <option>S2</option>
+            <option>S3</option>
+            <option>S4</option>
+            <option>S5</option>
+            <option>S6</option>
+            <option>S7</option>
+            <option>S8</option>
+        </select>
+
+        <label for="reg_no">Register No:</label>
+        <input type="text" id="reg_no" name="reg_no" required>
+
+        <label for="contact_no">Contact No:</label>
+        <input type="text" id="contact_no" name="contact_no">
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent the form from submitting the traditional way
+
+            const formData = {
+                name: document.getElementById('name').value,
+                semester: document.getElementById('semester').value,
+                reg_no: document.getElementById('reg_no').value,
+                contact_no: document.getElementById('contact_no').value,
+                department: document.getElementById('department').value,
+                password: document.getElementById('password').value,
+                email: document.getElementById('email').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message);
+                    // Optionally redirect to a login page or clear the form
+                    // window.location.href = '/login.html';
+                } else {
+                    alert('Error: ' + result.message);
+                }
+            } catch (error) {
+                alert('Server error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
