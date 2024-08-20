@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bytewave</title>
+    <style>
+       
+    </style>
+    <link rel="stylesheet" href="byte.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    
+        <nav>
+         <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">EVENTS</a></li>
+            <li><a href="">EXECOM TEAM</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">CONTACT</a></li><li>            
+         </ul>
+    </nav>
+    <button class="login" style="font-family:poppins;"> Login</button>
+    <button class="SignIn" style="font-family: Poppins;" onclick="location.href='signup.html';">SignUp</button>
+    </header>
+
+
+
+    <video src="C:\Users\aruka\Init\greenbg-vmake.mp4" class="vidbg" autoplay muted loop></video>
+
+    <div class="photo" style="height: 300px;">
+        <img src="C:\Users\aruka\Init\logo (1).png" alt="initphoto" class="initphoto">
+    </div>
+    <div class="login-options" id="loginOptions">
+        <a href="login.html">User Login</a>
+        <a href="#">Admin Login</a>
+    </div>
+
+    <footer>
+        <div class="footercontainer">
+            <div class="socialicons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+         
+    </footer>
+    <script>
+        document.querySelector('.login').addEventListener('click', function() {
+            var loginOptions = document.getElementById('loginOptions');
+            if (loginOptions.style.display === 'block') {
+                loginOptions.style.display = 'none';
+            } else {
+                loginOptions.style.display = 'block';
+            }
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.login')) {
+                var loginOptions = document.getElementById('loginOptions');
+                if (loginOptions.style.display === 'block') {
+                    loginOptions.style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
