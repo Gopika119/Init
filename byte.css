@@ -48,7 +48,7 @@ body, html {
 }
 .login{
     padding: 10px;
-    margin-right: 91%;
+    margin-right: 0%;
     margin-top: 1px;
     border-radius: 50px;
     position: relative;
@@ -67,28 +67,6 @@ body, html {
     color: #aafd4c;
     transition: 0.4s ease-in-out;
 }
-.SignIn {
-    padding: 10px ;
-    border-radius: 50px;
-    cursor: pointer;
-    border: none;
-    background-color: #ffffff;
-    position: relative;
-    color: #1c1c1c;
-    font-size: large;
-    font-weight: bold;
-    position: relative;
-    right: 20px; /* Align to the right */
-    transition: background-color 0.4s ease-in-out;
-    margin-right: 30px;
-}
-.SignIn:hover{
-
-    background-color: #000000;
-    color: #aafd4c;
-    transition: 0.4s ease-in-out;
-}
- 
 header {
     width: 100%;
     z-index: 2;
@@ -114,7 +92,7 @@ header nav ul{
     justify-content: center;
     gap: 60px;
     margin-top: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
     padding: 14px;
     position: fixed;
      
